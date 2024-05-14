@@ -388,6 +388,7 @@ a:link, a:visited, a:hover, a:active {
     color: black;
 }
 @media (max-width: 480px) {
+
     body{
         overflow-x: hidden;
     }

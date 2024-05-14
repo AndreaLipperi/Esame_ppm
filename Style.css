@@ -1,6 +1,6 @@
 body {
     background-color: white;
-    overflow: hidden;
+    overflow-x: hidden;
     margin: 0;
 }
 
@@ -390,9 +390,6 @@ a:link, a:visited, a:hover, a:active {
 }
 @media (max-width: 480px) {
 
-    body{
-        overflow-x: hidden;
-    }
     #contenitore_pagina {
         padding-top: -40px;
         width: 100%;

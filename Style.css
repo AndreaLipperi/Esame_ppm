@@ -394,7 +394,7 @@ a:link, a:visited, a:hover, a:active {
     }
     #contenitore_pagina {
         padding-top: -40px;
-        max-width: 100%; /* Larghezza massima del form */
+        width: 100%;
         margin-right: 5px;
         margin-left:5px;
         padding-bottom: 520px; /* Spazio per il piè di pagina */

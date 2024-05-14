@@ -1,6 +1,5 @@
 body {
     background-color: white;
-    overflow-x: hidden;
     margin: 0;
 }
 
@@ -396,6 +395,7 @@ a:link, a:visited, a:hover, a:active {
         margin-right: 5px;
         margin-left:5px;
         padding-bottom: 520px; /* Spazio per il piè di pagina */
+        position: relative;
     }
     #int_left, #int_right{
         display: none;

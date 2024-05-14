@@ -566,7 +566,7 @@ a:link, a:visited, a:hover, a:active {
         background-color: #2558BF;
         color: white;
         position: absolute; /* Posizione assoluta rispetto al form */
-        left: -5px;
+        left: 0;
         font-size: 10px;
         bottom:55px;
         width: 100vw; /* Larghezza dell'intera finestra */
@@ -575,7 +575,7 @@ a:link, a:visited, a:hover, a:active {
         background-color: blue;
         color: white;
         position: absolute; /* Posizione assoluta rispetto al form */
-        left: -5px;
+        left: 0;
         font-size: 12px;
         bottom: -20px; /* Altezza del piè di pagina */
         width: 100vw; /* Larghezza dell'intera finestra */

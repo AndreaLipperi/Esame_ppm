@@ -388,7 +388,15 @@ a:link, a:visited, a:hover, a:active {
     color: black;
 }
 @media (max-width: 480px) {
+    html, body {
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+    }
 
+    body {
+        position: fixed;
+    }
     #contenitore_pagina {
         padding-top: -40px;
         width: 100%;

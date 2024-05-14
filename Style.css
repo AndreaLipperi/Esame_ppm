@@ -388,22 +388,13 @@ a:link, a:visited, a:hover, a:active {
     color: black;
 }
 @media (max-width: 480px) {
-    html, body {
-        width: 100%;
-        height: 100%;
-        overflow-x: hidden;
-    }
-
-    body {
-        position: fixed;
-    }
     #contenitore_pagina {
         padding-top: -40px;
-        width: 100%;
         margin-right: 5px;
         margin-left:5px;
         padding-bottom: 520px; /* Spazio per il piè di pagina */
         position: relative;
+        overflow-x: hidden;
     }
     #int_left, #int_right{
         display: none;
@@ -513,6 +504,7 @@ a:link, a:visited, a:hover, a:active {
         grid-column: 1 / span 1; /* L'elemento occupa 4 colonne */
     }
     .grid_container_city {
+        overflow-y:scroll;
         grid-template-columns: repeat(1, 1fr);
         display: none;
         border: 2px solid grey;

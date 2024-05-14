@@ -335,8 +335,10 @@
 
 		if (screenWidth <= 480) { // Se lo schermo è piccolo
 			offset = -slideIndex * 110 + '%';
-		} else { // Se lo schermo è grande
+		} else if(screenWidth>=1024) { // Se lo schermo è grande
 			offset = -slideIndex * 50 + '%';
+		} else {
+			offset = -slideIndex * 55 +'%';
 		}
 		slideIndex = (slideIndex + n + totalSlides) % totalSlides;
 		document.querySelector('.slider-wrapper').style.transform = 'translateX(' + offset + ')';

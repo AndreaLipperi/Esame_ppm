@@ -1,0 +1,644 @@
+body {
+    background-color: white;
+    margin: 0;
+}
+
+#contenitore_pagina {
+    max-width: 1000px; /* Larghezza massima del form */
+    margin: 0 auto; /* Centra il form nella pagina */
+    padding-top: 10px;
+    padding-bottom: 200px; /* Spazio per il piè di pagina */
+    position: relative; /* Posizione relativa per allineare il piè di pagina */
+}
+
+#int_left {
+    color: grey;
+    font-size: 12px;
+    position: relative;
+}
+
+#int_right {
+    font-size: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    align-items: center;
+    border-bottom: 2px solid #ccc;
+    z-index: 1000;
+}
+
+#intestazione_nascosta {
+    background-color: rgba(255, 255, 255, 1); /* Opacità per oscurare il resto della pagina */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px; /* Altezza fissa per oscurare il resto della pagina */
+    z-index: 1000;
+}
+
+.header #mid {
+    color: blue;
+    font-size: 20px;
+}
+
+.header #mid a {
+    color: blue;
+}
+
+.header #right {
+    margin-right: 70px;
+}
+
+.hidden {
+    display: none;
+}
+
+.button-like {
+    text-decoration: none;
+    cursor: pointer;
+    color: black; /* Colore del testo */
+    border: none;
+    background: none;
+    padding: 0; /* Rimuove lo spazio intorno al testo */
+    display: inline; /* Mostra come elemento "inline" */
+    white-space: nowrap; /* Evita che il testo vada a capo */
+}
+
+/* Stile del contenitore della griglia */
+
+
+/* Stile delle celle della griglia */
+.grid-item {
+    background-color: rgba(255, 255, 255, 1);
+    padding: 20px;
+    border: 0px solid #ccc;
+    text-align: left;
+}
+
+/* Stile del contenitore della griglia */
+.grid-titolo {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+    margin-top: 20px; /* Spazio tra la griglia del titolo e il testo */
+    position: relative;
+}
+
+/* Stile delle celle della griglia del titolo */
+.grid-item-titolo {
+    padding: 20px;
+    text-align: center;
+}
+
+#titolo_txt a {
+    color: blue;
+}
+
+.grid-item-titolo:nth-child(1) {
+    background-color: #ccc;
+}
+
+.grid-item-titolo:nth-child(3) {
+    background-color: #ccc;
+}
+
+.grid-item-titolo:nth-child(2) {
+    color: blue;
+    font-size: 24px;
+}
+
+.grid_sottotitolo {
+    display: grid;
+    grid-template-rows: auto auto; /* Due righe di altezza automatica */
+    grid-template-columns: repeat(5, 1fr); /* Divide la griglia in 4 colonne di larghezza uguale */
+    margin-top: 10px;
+    background-color: #ccc;
+    grid-gap: 1px;
+    position: relative;
+}
+
+.riga1_grid_sottotitolo {
+    display: flex; /* Usiamo flexbox per allineare gli elementi su una riga */
+    justify-content: center; /* Centra gli elementi orizzontalmente */
+    align-items: center; /* Centra gli elementi verticalmente */
+    border-bottom: 2px solid grey;
+    grid-column: 1 / span 5; /* L'elemento occupa 4 colonne */
+}
+
+.grid_item_sottotitolo {
+    padding: 5px;
+    text-align: center;
+    font-size: 15px;
+    border-right: 2px solid grey;
+    font-weight: bold;
+}
+
+.grid_item_sottotitolo:last-child {
+    border-right: none; /* Rimuove il bordo destro dall'ultimo elemento */
+}
+
+.grid_container_menu {
+    display: none;
+    border: 2px solid grey;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.ricerca_citta {
+    display: flex; /* Usiamo flexbox per allineare gli elementi su una riga */
+    justify-content: center; /* Centra gli elementi orizzontalmente */
+    align-items: center; /* Centra gli elementi verticalmente */
+    grid-column: 1 / span 4; /* L'elemento occupa 4 colonne */
+}
+
+.search-box {
+    padding: 10px;
+    border-radius: 5px;
+    width: 300px;
+    max-width: 100%;
+}
+
+.grid_container_city {
+    display: none;
+    border: 2px solid grey;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-item-city {
+    background-color: rgba(255, 255, 255, 1);
+    padding: 20px;
+    border: 0px solid #ccc;
+    text-align: left;
+}
+
+#ultimora {
+    color: red;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin-top: 10px;
+}
+
+#ultimora_left {
+    float: left;
+}
+
+#ultimora_right {
+    float: right;
+}
+
+#ultimora_left a {
+    color: red;
+}
+
+#ultimora_right a {
+    color: #ccc;
+}
+
+#ultimora_clear {
+    clear: both;
+}
+
+#ultimora_dot {
+    display: inline-block;
+    width: 1em; /* Dimensione della prima lettera */
+    height: 1em; /* Stessa dimensione della larghezza */
+    background-color: red;
+    border-radius: 50%; /* Per rendere il pallino rotondo */
+    margin-right: 0.5em; /* Spazio tra la parola e il pallino */
+}
+
+#articolo_1 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+    align-items: center; /* Centrare verticalmente gli elementi */
+}
+
+/* Stile per il div contenente il testo dell'articolo */
+#testo_articolo1 {
+    flex: 1; /* Far espandere questo div per occupare lo spazio rimanente */
+}
+
+#container_articoli {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+    align-items: center; /* Centrare verticalmente gli elementi */
+}
+
+
+#articolo_2 {
+    padding: 5px;
+}
+
+#articolo_3 {
+    padding: 5px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+#articoli_right {
+    padding: 5px;
+}
+
+#articolo_4 {
+    border-bottom: 1px solid #ccc;
+}
+
+#container_articoli a:hover, #articolo_1 a:hover {
+    color: grey;
+}
+
+/* Stile per il contenitore del slider */
+.slider-container {
+    position: relative;
+    background-color: #639CF8;
+    width: 50%; /* Larghezza del contenitore */
+    height: 200px;
+    margin-top: 5px;
+    overflow: hidden; /* Nascondere il contenuto che sfora */
+    padding: 0 50px;
+}
+
+/* Stile per il wrapper delle immagini */
+.slider-wrapper {
+    display: flex; /* Utilizzare flexbox per allineare le immagini */
+    transition: transform 0.5s ease; /* Animazione per lo scorrimento delle immagini */
+}
+
+/* Stile per ciascuna immagine */
+.slide {
+    flex: 0 0 50%; /* Impostare la larghezza di ciascuna immagine */
+    padding: 0 10px; /* Spazio a sinistra e a destra */
+}
+
+/* Stile per le frecce */
+.arrow {
+    position: absolute; /* Posizionare assolutamente rispetto al contenitore */
+    color: blue;
+    top: 50%; /* Allineare al centro verticalmente */
+    transform: translateY(-50%); /* Centrare verticalmente */
+    padding: 10px; /* Spazio intorno alle frecce */
+    cursor: pointer; /* Cambiare il cursore al passaggio */
+    z-index: 1; /* Posizionare sopra le immagini */
+}
+
+/* Stile per la freccia sinistra */
+.arrow-left {
+    left: 0; /* Posizionare a sinistra */
+}
+
+/* Stile per la freccia destra */
+.arrow-right {
+    right: 0; /* Posizionare a destra */
+}
+
+#pubblicita_container {
+    border-left: 1px solid #ccc;
+    width: 39%; /* Larghezza del contenitore */
+    height: 200px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+#pubblicita {
+    margin-left: 10px;
+}
+
+.slider-container, #pubblicita_container {
+    display: inline-block;
+    vertical-align: top; /* Allineamento verticale in alto */
+}
+
+#menu_piepagina {
+    height: 200px;
+    background-color: #2558BF;
+    color: white;
+    position: absolute; /* Posizione assoluta rispetto al form */
+    left: -90px;
+    font-size: 10px;
+    bottom: -30px; /* Altezza del piè di pagina */
+    width: 100vw; /* Larghezza dell'intera finestra */
+    padding: 0px 0; /* Padding per il contenuto */
+}
+
+#contenitore_grid_pie {
+    width: 500px;
+    font-size: 15px;
+    margin-top: 16px;
+    margin-left: 25px; /* Centra il contenitore orizzontalmente sulla pagina */
+}
+
+#contenitore_grid_pie a {
+    color: white;
+}
+
+#contenitore_grid_pie a:hover {
+    text-decoration: underline;
+}
+
+#gridPie {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+#foto_menu_pie, #testo_menu_pie, #contenitore_grid_pie {
+    display: inline-block;
+    vertical-align: top; /* Allineamento verticale in alto */
+}
+
+#testo_menu_pie #logo_testo {
+    color: #639CF8;
+}
+
+#piepagina {
+    background-color: blue;
+    color: white;
+    position: absolute; /* Posizione assoluta rispetto al form */
+    left: -90px;
+    font-size: 10px;
+    bottom: -30px; /* Altezza del piè di pagina */
+    width: 100vw; /* Larghezza dell'intera finestra */
+    padding: 0px 0; /* Padding per il contenuto */
+}
+
+#piepagina a {
+    color: white;
+}
+
+#piepagina a:hover {
+    text-decoration: underline;
+}
+
+#piepagina p {
+    display: inline-block;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link, a:visited, a:hover, a:active {
+    color: black;
+}
+@media (max-width: 480px) {
+    #contenitore_pagina {
+        padding-top: -40px;
+        max-width: 400px; /* Larghezza massima del form */
+        margin-right: 5px;
+        margin-left:5px;
+        padding-bottom: 520px; /* Spazio per il piè di pagina */
+    }
+    #int_left, #int_right{
+        display: none;
+    }
+    #txt_for_little_screen {
+        font-size: 20px;
+        color: #639CF8;
+    }
+    #txt_for_little_screen, #titolo_giornale{
+        margin: 0;
+    }
+    #login_for_little_screen{
+        border: 1px solid white; /* Imposta il bordo bianco */
+        background-color: white;
+        width: 20px; /* Imposta la larghezza */
+        height: 20px; /* Imposta l'altezza */
+        margin-top: -20px;
+        font-size: 15px; /* Imposta la dimensione del font */
+        text-align: center;
+        float: right;
+        margin-right: -80px;
+    }
+
+    #abbonati_for_little_screen{
+        color: white;
+        background-color: #639CF8;
+        border: 2px solid #639CF8;
+        float: right;
+        margin-top:10px;
+        margin-right: -80px;
+    }
+    #titolo_giornale, #abbonati_for_little_screen{
+        display: inline-block;
+    }
+    .grid-titolo {
+        background-color: blue;
+    }
+    .grid-item-titolo {
+        padding: 10px;
+        text-align: left;
+    }
+    #titolo_txt a {
+        color: white;
+    }
+    .grid-item-titolo:nth-child(2) {
+        color: white;
+        font-size: 20px;
+    }
+    #intestazione_nascosta {
+        background-color: rgba(0, 0, 255, 1); /* Opacità per oscurare il resto della pagina */
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 50px; /* Altezza fissa per oscurare il resto della pagina */
+        z-index: 1000;
+    }
+    #research_but_header{
+        display:none;
+    }
+    .header #mid {
+        position: absolute;
+        top: -10px;
+        left: 3px;
+    }
+    .header #mid a {
+        color: white;
+        font-size: 25px;
+    }
+
+    .button-like {
+        font-size: 20px;
+        position: absolute;
+        top: 13px;
+        right: 30px;
+        color: white; /* Colore del testo */
+        display: inline; /* Mostra come elemento "inline" */
+        white-space: nowrap; /* Evita che il testo vada a capo */
+    }
+    .header #right {
+        display:none;
+    }
+    .grid-container {
+        width: 100%;
+        display: none;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 10px;
+        margin-top: 70px; /* Altezza dell'intestazione nascosta + margine inferiore */
+        margin-left: 0px; /* Allineamento con il margine sinistro di intestazione_nascosta */
+        border-right: 2px solid #ccc; /* Bordo sinistro */
+        border-bottom: 2px solid #ccc;
+        background-color: rgba(255, 255, 255, 1); /* Opacità per oscurare il resto della pagina */
+        z-index: 999; /* Assicura che la griglia sia sopra il contenuto della pagina */
+        position: fixed;
+    }
+
+    .grid-item-titolo:nth-child(1) {
+        display:none;
+    }
+
+    .grid-item-titolo:nth-child(3) {
+        display:none;
+    }
+    .riga1_grid_sottotitolo {
+        display:none;
+    }
+    .ricerca_citta{
+        grid-column: 1 / span 1; /* L'elemento occupa 4 colonne */
+    }
+    .grid_container_city {
+        grid-template-columns: repeat(1, 1fr);
+        display: none;
+        border: 2px solid grey;
+    }
+    .grid-item-city {
+        border-bottom:1px solid grey;
+    }
+    .grid-item{
+        border-bottom:1px solid grey;
+    }
+    .grid_container_menu {
+        grid-template-columns: repeat(1, 1fr);
+        display: none;
+        border: 2px solid grey;
+    }
+    #articolo_1{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #img_articolo1{
+        order: -1;
+    }
+    #img {
+        height: 300px;
+        width: 300px;
+    }
+    #container_articoli{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #articolo_3 {
+        padding: 5px;
+        border-top: 1px solid #ccc;
+        border-left: 0px;
+        border-right: 0px;
+        border-bottom: 1px solid #ccc;
+    }
+    #pubblicita_container {
+        display:none;
+    }
+    /* Stile per il contenitore del slider */
+    .slider-container {
+        width: 70%; /* Larghezza del contenitore */
+        height: 250px;
+    }
+    .slide {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 100% 0 0;
+    }
+    #menu_piepagina {
+        height: 430px;
+        background-color: #2558BF;
+        color: white;
+        position: absolute; /* Posizione assoluta rispetto al form */
+        left: -5px;
+        font-size: 10px;
+        bottom:55px;
+        width: 100vw; /* Larghezza dell'intera finestra */
+    }
+    #piepagina {
+        background-color: blue;
+        color: white;
+        position: absolute; /* Posizione assoluta rispetto al form */
+        left: -5px;
+        font-size: 12px;
+        bottom: -20px; /* Altezza del piè di pagina */
+        width: 100vw; /* Larghezza dell'intera finestra */
+        display: flex;
+        flex-direction: column; /* Imposta la direzione dei flex items come colonna */
+    }
+
+    #foto_menu_pie, #testo_menu_pie, #contenitore_grid_pie {
+        display: block;
+    }
+    #p_left {
+        color: #639CF8;
+    }
+}
+@media (min-width: 780px) {
+    #txt_for_little_screen{
+        display:none;
+    }
+    #login_for_little_screen{
+        display: none;
+    }
+    #abbonati_for_little_screen{
+        display: none;
+    }
+    .header #left {
+        margin-left: 20px;
+    }
+    .grid-container {
+        display: none;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+        margin-top: 70px; /* Altezza dell'intestazione nascosta */
+        margin-left: 0px; /* Allineamento con il margine sinistro di intestazione_nascosta */
+        margin-right: 90px; /* Allineamento con il margine destro di intestazione_nascosta */
+        border-right: 2px solid #ccc; /* Bordo sinistro */
+        border-bottom: 2px solid #ccc;
+        background-color: rgba(255, 255, 255, 1); /* Opacità per oscurare il resto della pagina */
+        z-index: 999; /* Assicura che la griglia sia sopra il contenuto della pagina */
+        position: fixed;
+    }
+    #menu_piepagina {
+        left: -235px;
+    }
+    #piepagina {
+        left: -235px;
+    }
+    #articolo_1{
+        display: flex;
+    }
+    #container_articoli{
+        display: flex; /* Utilizzare flexbox */
+    }
+
+    #testo_articolo1, #img_articolo1 {
+        display: inline-block;
+        vertical-align: top; /* Allineamento verticale in alto */
+    }
+    #p_left {
+        margin-left: 90px;
+        color: #639CF8;
+        float: left;
+    }
+
+    #p_right {
+        margin-right: 90px;
+        float: right;
+    }
+}

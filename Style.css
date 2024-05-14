@@ -70,9 +70,6 @@ body {
     white-space: nowrap; /* Evita che il testo vada a capo */
 }
 
-/* Stile del contenitore della griglia */
-
-
 /* Stile delle celle della griglia */
 .grid-item {
     background-color: rgba(255, 255, 255, 1);

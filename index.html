@@ -7,7 +7,8 @@
 	<script>
 		function showHideGrid(id) {
 			var gridContainer = document.getElementById(id);
-			if(gridContainer.style.display=="none"){
+			var tipoDisplay = window.getComputedStyle(gridContainer).getPropertyValue('display');
+			if(tipoDisplay === "none"){
 				gridContainer.style.display = "grid";
 			} else {
 				gridContainer.style.display = "none";
@@ -116,15 +117,15 @@
             		<a href="" style="color:blue;margin-right:15px;">Fiorentina</a>
         			</span></b>
 		</div>
-		<div class="grid_item_sottotitolo" onmouseenter="showHideGrid('gridContainerCity');CloseGrid('gridContainerMenu')" onclick="showHideGrid('gridContainerCity');CloseGrid('gridContainerMenu')">CITTA' ></div>
-		<div class="grid_item_sottotitolo" onmouseenter="showHideGrid('gridContainerMenu');CloseGrid('gridContainerCity')" onclick="showHideGrid('gridContainerMenu');CloseGrid('gridContainerCity')">MENU' ></div>
+		<div class="grid_item_sottotitolo" onmouseenter="showHideGrid('gridContainerCity');CloseGrid('gridContainerMenu')" onclick="showHideGrid('gridContainerCity');CloseGrid('gridContainerMenu')">CITTÀ &#5167;</div>
+		<div class="grid_item_sottotitolo" onmouseenter="showHideGrid('gridContainerMenu');CloseGrid('gridContainerCity')" onclick="showHideGrid('gridContainerMenu');CloseGrid('gridContainerCity')">MENÙ &#5167;</div>
 		<div class="grid_item_sottotitolo"><a href="">VIDEO</a></div>
 		<div class="grid_item_sottotitolo"><a href="">ULTIM'ORA </a> <span style="color:red;font-size:20px;">&#x2022 </span></div>
-		<div class="grid_item_sottotitolo"><a href="">&#x1F50D Ricerca</a></div>
+		<div class="grid_item_sottotitolo"><a href="">&#x1F50D; Ricerca</a></div>
 	</div>
 	<div class="grid_container_city" id="gridContainerCity">
 		<!-- Celle della griglia -->
-		<div class="ricerca_citta" id="ricercaCitta">&#x1F50D <input type="text" class="search-box" name="q" placeholder="Ricerca..." oninput="Ricerca()"></div>
+		<div class="ricerca_citta" id="ricercaCitta">&#x1F50D; <input type="text" class="search-box" name="q" placeholder="Ricerca..." oninput="Ricerca()"></div>
 		<div class="grid-item-city" data-city="roma"><a href="">Roma ></a></div>
 		<div class="grid-item-city" data-city="milano"><a href="">Milano ></a></div>
 		<div class="grid-item-city" data-city="napoli"><a href="">Napoli ></a></div>
@@ -249,13 +250,13 @@
 		<div id="testo_menu_pie">
 			<h1><span id="logo_testo">LOGO</span> GIORNALE</h1>
 			<p><b>... srl</b> Società soggetta a direzione e coordinamento di <b>...</b></p>
-			<h1 style="color:grey;"><b>PUBBLICITA' GIORNALI COLLEGATI</b></h1>
+			<h1 style="color:grey;"><b>PUBBLICITÀ GIORNALI COLLEGATI</b></h1>
 		</div>
 		<div id="contenitore_grid_pie">
 			<div class="grid_menu_pie" id="gridPie">
 				<div class="grid_item_pie"><span style="color:#639CF8;">CATEGORIE</span></div>
 				<div class="grid_item_pie"><span style="color:#639CF8;">ABBONAMENTI</span></div>
-				<div class="grid_item_pie"><span style="color:#639CF8;">PUBBLICITA'</span></div>
+				<div class="grid_item_pie"><span style="color:#639CF8;">PUBBLICITÀ</span></div>
 				<div class="grid_item_pie"></div>
 				<div class="grid_item_pie"><a href="">Contatti</a></div>
 				<div class="grid_item_pie"><a href="">Digitale</a></div>
@@ -329,19 +330,21 @@
 
 	function slide(n, control) {
 		const slides = document.querySelectorAll('.slide');
-		const screenWidth = window.innerWidth;
 		const totalSlides = slides.length;
-		let offset;
 
-		if (screenWidth <= 480) { // Se lo schermo è piccolo
-			offset = -slideIndex * 110 + '%';
-		} else if(screenWidth>=1024) { // Se lo schermo è grande
-			offset = -slideIndex * 50 + '%';
-		} else {
-			offset = -slideIndex * 55 +'%';
-		}
+		// Calcoliamo l'offset in base alla larghezza dello schermo
+		const screenWidth = window.innerWidth;
+		const offset = screenWidth <= 480 ? -slideIndex * 110 :
+				screenWidth >= 1024 ? -slideIndex * 50 :
+						-slideIndex * 55;
+
+		// Aggiungiamo l'indice alla slideIndex
 		slideIndex = (slideIndex + n + totalSlides) % totalSlides;
-		document.querySelector('.slider-wrapper').style.transform = 'translateX(' + offset + ')';
+
+		// Applichiamo la transizione
+		const wrapper = document.querySelector('.slider-wrapper');
+		wrapper.style.transition = 'transform 0.5s ease-in-out';
+		wrapper.style.transform = 'translateX(' + offset + '%)';
 	}
 </script>
 

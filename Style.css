@@ -384,6 +384,10 @@ a {
 a:link, a:visited, a:hover, a:active {
     color: black;
 }
+
+#p_left {
+    color: #639CF8;
+}
 @media (max-width: 480px) {
     #contenitore_pagina {
         padding-top: -40px;
@@ -583,9 +587,6 @@ a:link, a:visited, a:hover, a:active {
     #foto_menu_pie, #testo_menu_pie, #contenitore_grid_pie {
         display: block;
     }
-    #p_left {
-        color: #639CF8;
-    }
 }
 @media (min-width: 780px) {
     #txt_for_little_screen{
@@ -632,7 +633,6 @@ a:link, a:visited, a:hover, a:active {
     }
     #p_left {
         margin-left: 90px;
-        color: #639CF8;
         float: left;
     }
 

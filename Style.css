@@ -564,13 +564,13 @@ a:link, a:visited, a:hover, a:active {
         flex: 100% 0 0;
     }
     #menu_piepagina {
-        height: 430px;
+        height: 435px;
         background-color: #2558BF;
         color: white;
         position: absolute; /* Posizione assoluta rispetto al form */
         left: -5px;
         font-size: 10px;
-        bottom:60px;
+        bottom:65px;
         width: 100vw; /* Larghezza dell'intera finestra */
     }
     #piepagina {

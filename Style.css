@@ -199,8 +199,8 @@ body {
 }
 
 
-#articolo_2 {
-    padding: 0.5%;
+#articolo_2, #articolo_3, #articoli_right {
+    margin: 3%;
 }
 
 #articolo_3 {
@@ -469,7 +469,6 @@ a:link, a:visited, a:hover, a:active {
         width: 300px;
     }
     .grid_container_city {
-        overflow-y:scroll;
         grid-template-columns: repeat(1, 1fr);
         display: none;
         border: 2px solid grey;
@@ -907,7 +906,6 @@ a:link, a:visited, a:hover, a:active {
     }
     .grid_container_city {
         z-index: 999;
-        overflow-y:scroll;
         width: 100%;
         grid-template-columns: repeat(1, 1fr);
         display: none;

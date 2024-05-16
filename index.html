@@ -8,7 +8,7 @@
 		function showHideGrid(id) {
 			var gridContainer = document.getElementById(id);
 			var tipoDisplay = window.getComputedStyle(gridContainer).getPropertyValue('display');
-			if(tipoDisplay === "none"){
+			if(tipoDisplay == "none"){
 				gridContainer.style.display = "grid";
 			} else {
 				gridContainer.style.display = "none";
@@ -58,7 +58,53 @@
 		document.addEventListener("DOMContentLoaded", function() {
 			cambiaOpacityDot();
 		});
+		function openCloseSubsection(id) {
+			var subsection = document.getElementById(id);
+			var tipoDisplay = window.getComputedStyle(subsection, null).getPropertyValue('display');
+			var menu = document.getElementById("menu_piepagina"); // Aggiungiamo il footer
+			var form = document.getElementById("contenitore_pagina"); // Aggiungiamo il footer
 
+			const screenWidth = window.innerWidth;
+
+			if (tipoDisplay == "none") {
+				subsection.style.display = "grid";
+				var altezzaGrid = subsection.offsetHeight; // Altezza della grid
+
+				var attuale_marginTop = parseInt(window.getComputedStyle(menu, null).getPropertyValue('margin-top'));
+
+				var attuale_height = parseInt(window.getComputedStyle(menu, null).getPropertyValue('height'));
+
+				var attuale_padding = parseInt(window.getComputedStyle(form, null).getPropertyValue('padding-bottom'));
+
+				var nuovoMargin = attuale_marginTop + altezzaGrid; // Decremento del padding di 10px
+				var nuovoHeight = attuale_height + altezzaGrid;
+				var nuovoPadding= attuale_padding + altezzaGrid;
+				// Aggiorniamo la posizione del footer
+				menu.style.marginTop = nuovoMargin + "px";
+				menu.style.height = nuovoHeight + "px";
+				form.style.paddingBottom = nuovoPadding + "px";
+
+
+			} else {
+				var altezzaGrid = subsection.offsetHeight; // Altezza della grid
+
+				var attuale_marginTop = parseInt(window.getComputedStyle(menu, null).getPropertyValue('margin-top'));
+
+				var attuale_height = parseInt(window.getComputedStyle(menu, null).getPropertyValue('height'));
+
+				var attuale_padding = parseInt(window.getComputedStyle(form, null).getPropertyValue('padding-bottom'));
+
+				var nuovoMargin = attuale_marginTop - altezzaGrid; // Decremento del padding di 10px
+				var nuovoHeight = attuale_height - altezzaGrid;
+				var nuovoPadding= attuale_padding - altezzaGrid;
+
+				menu.style.marginTop = nuovoMargin + "px";
+				menu.style.height = nuovoHeight + "px";
+				form.style.paddingBottom = nuovoPadding + "px";
+
+				subsection.style.display = "none";
+			}
+		}
 
 	</script>
 </head>
@@ -169,7 +215,7 @@
 	</div>
 
 
-	<div id="articolo_1">
+	<div id="articolo_1" onmouseenter="CloseGrid('gridContainerCity')">
 		<div id="testo_articolo1">
 			<a href="">
 				<h3 style="color:blue;">CRONACA</h3>
@@ -252,7 +298,7 @@
 			<p><b>... srl</b> Società soggetta a direzione e coordinamento di <b>...</b></p>
 			<h1 style="color:grey;"><b>PUBBLICITÀ GIORNALI COLLEGATI</b></h1>
 		</div>
-		<div id="contenitore_grid_pie">
+		<div id="contenitore_grid_pie_big_screen">
 			<div class="grid_menu_pie" id="gridPie">
 				<div class="grid_item_pie"><span style="color:#639CF8;">CATEGORIE</span></div>
 				<div class="grid_item_pie"><span style="color:#639CF8;">ABBONAMENTI</span></div>
@@ -272,6 +318,29 @@
 				<div class="grid_item_pie"></div>
 			</div>
 		</div>
+		<div id="contenitore_grid_pie_small_screen">
+			<div class="grid_menu_pie_small" id="gridPieSmall">
+				<div class="grid_item_pie_titolo" onclick="openCloseSubsection('categorie')"><span style="color:#639CF8;">CATEGORIE</span><span style="float:right; font-size:0.7em; color:#639CF8;">&#5167;</span></div>
+				<div id="categorie">
+					<div class="grid_item_pie_link"><a href=""><b>Contatti</b></a></div>
+					<div class="grid_item_pie_link"><a href=""><b>Lavora con noi</b></a></div>
+					<div class="grid_item_pie_link"><a href=""><b>Concorsi</b></a></div>
+				</div>
+				<div class="grid_item_pie_titolo" onclick="openCloseSubsection('abbonamenti')"><span style="color:#639CF8;">ABBONAMENTI</span><span style="float:right; font-size:0.7em; color:#639CF8;">&#5167;</span></div>
+				<div id="abbonamenti">
+					<div class="grid_item_pie_link"><a href=""><b>Digitale</b></a></div>
+					<div class="grid_item_pie_link"><a href=""><b>Cartaceo</b></a></div>
+					<div class="grid_item_pie_link"><a href=""><b>Offerte Promozionali</b></a></div>
+				</div>
+				<div class="grid_item_pie_titolo" onclick="openCloseSubsection('pubblicita_pie')"><span style="color:#639CF8;">PUBBLICITÀ</span><span style="float:right; font-size:0.7em; color:#639CF8;">&#5167;</span></div>
+				<div id="pubblicita_pie">
+					<div class="grid_item_pie_link"><a href=""><b>Speed Adv</b></a></div>
+					<div class="grid_item_pie_link"><a href=""><b>Network</b></a></div>
+					<div class="grid_item_pie_link"><a href=""><b>Annunci</b></a></div>
+					<div class="grid_item_pie_link"><a href=""><b>Aste e Gare</b></a></div>
+				</div>
+			</div>
+		</div>
 	</div>
 	<footer id="piepagina">
 		<p id="p_left">Copyright </p>
@@ -281,12 +350,33 @@
 </form>
 
 <script>
+	function cambiaStilePie() {
+		var larghezzaFinestra = window.innerWidth;
+		var menu = document.getElementById("menu_piepagina"); // Aggiungiamo il footer
+		var form = document.getElementById("contenitore_pagina"); // Aggiungiamo il footer
+
+		// Cambia lo stile in base alla larghezza della finestra
+		if (larghezzaFinestra > 1049) {
+			CloseGrid("categorie");
+			CloseGrid("abbonamenti");
+			CloseGrid("pubblicita_pie");
+			menu.style.marginTop = "2%";
+			menu.style.height = "20%";
+			form.style.paddingBottom = "40%";
+		} else if(larghezzaFinestra<=1049 && larghezzaFinestra>=481){
+			menu.style.marginTop = "1%";
+			menu.style.height = "20%";
+			form.style.paddingBottom = "80%";
+		}
+	}
+	window.onload = cambiaStilePie;
+	window.onresize = cambiaStilePie;
 	document.addEventListener("DOMContentLoaded", function() {
 		window.onscroll = function() { mostraDiv() };
 		var nascostoDiv = document.getElementById("intestazione_nascosta");
 
 		function mostraDiv() {
-			if (window.pageYOffset > 15) {
+			if (window.scrollY > 15) {
 				nascostoDiv.style.display = "flex";
 			} else {
 				nascostoDiv.style.display = "none";
@@ -335,7 +425,7 @@
 		// Calcoliamo l'offset in base alla larghezza dello schermo
 		const screenWidth = window.innerWidth;
 		const offset = screenWidth <= 480 ? -slideIndex * 110 :
-				screenWidth >= 1024 ? -slideIndex * 50 :
+				screenWidth >= 1049 ? -slideIndex * 50 :
 						-slideIndex * 55;
 
 		// Aggiungiamo l'indice alla slideIndex

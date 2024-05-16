@@ -4,21 +4,15 @@ body {
 }
 
 #contenitore_pagina {
-    max-width: 80%;
-    margin: 0 auto; /* Centra il form nella pagina */
-    padding-top: 1%;
-    padding-bottom: 40%; /* Spazio per il piè di pagina */
     position: relative; /* Posizione relativa per allineare il piè di pagina */
 }
 
 #int_left {
     color: grey;
-    font-size: 1em;
     position: relative;
 }
 
 #int_right {
-    font-size: 1em;
     position: absolute;
     top: 0;
     right: 0;
@@ -27,7 +21,6 @@ body {
 .header {
     display: flex;
     justify-content: space-between;
-    padding: 1.5%;
     align-items: center;
     border-bottom: 2px solid #ccc;
     z-index: 1000;
@@ -37,22 +30,15 @@ body {
     background-color: rgba(255, 255, 255, 1); /* Opacità per oscurare il resto della pagina */
     position: fixed;
     top: 0;
-    width: 100%;
-    height: 5%; /* Altezza fissa per oscurare il resto della pagina */
     z-index: 1000;
 }
 
 .header #mid {
     color: blue;
-    font-size: 1em;
 }
 
 .header #mid a {
     color: blue;
-}
-
-.header #right {
-    margin-right: 7%;
 }
 
 .hidden {
@@ -73,7 +59,6 @@ body {
 /* Stile delle celle della griglia */
 .grid-item {
     background-color: rgba(255, 255, 255, 1);
-    padding: 3%;
     border: 0 solid #ccc;
     text-align: left;
 }
@@ -81,15 +66,12 @@ body {
 /* Stile del contenitore della griglia */
 .grid-titolo {
     display: grid;
-    grid-template-columns: auto auto auto;
-    grid-gap: 1%;
-    margin-top: 2%; /* Spazio tra la griglia del titolo e il testo */
+    grid-template-columns: auto auto auto;/* Spazio tra la griglia del titolo e il testo */
     position: relative;
 }
 
 /* Stile delle celle della griglia del titolo */
 .grid-item-titolo {
-    padding: 2%;
     text-align: center;
 }
 
@@ -107,16 +89,13 @@ body {
 
 .grid-item-titolo:nth-child(2) {
     color: blue;
-    font-size: 2em;
 }
 
 .grid_sottotitolo {
     display: grid;
     grid-template-rows: auto auto; /* Due righe di altezza automatica */
-    grid-template-columns: repeat(5, 1fr); /* Divide la griglia in 4 colonne di larghezza uguale */
-    margin-top: 1%;
+    grid-template-columns: repeat(5, 1fr);
     background-color: #ccc;
-    grid-gap: 0.1%;
     position: relative;
 }
 
@@ -129,9 +108,7 @@ body {
 }
 
 .grid_item_sottotitolo {
-    padding: 0.5%;
     text-align: center;
-    font-size: 1em;
     border-right: 2px solid grey;
     font-weight: bold;
 }
@@ -153,13 +130,6 @@ body {
     grid-column: 1 / span 4; /* L'elemento occupa 4 colonne */
 }
 
-.search-box {
-    padding: 1%;
-    border-radius: 0.5%;
-    width: 30%;
-    max-width: 100%;
-}
-
 .grid_container_city {
     display: none;
     border: 2px solid grey;
@@ -168,16 +138,15 @@ body {
 
 .grid-item-city {
     background-color: rgba(255, 255, 255, 1);
-    padding: 2%;
     border: 0 solid #ccc;
     text-align: left;
 }
 
 #ultimora {
     color: red;
+    margin-top: 1%;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
-    margin-top: 1%;
 }
 
 #ultimora_left {
@@ -210,8 +179,6 @@ body {
 }
 
 #articolo_1 {
-    margin-top: 0.5%;
-    margin-bottom: 0.5%;
     border-bottom: 1px solid #ccc;
     align-items: center; /* Centrare verticalmente gli elementi */
 }
@@ -222,8 +189,6 @@ body {
 }
 
 #container_articoli {
-    margin-top: 0.5%;
-    margin-bottom: 0.5%;
     border-bottom: 1px solid #ccc;
     align-items: center; /* Centrare verticalmente gli elementi */
 }
@@ -255,11 +220,7 @@ body {
 .slider-container {
     position: relative;
     background-color: #639CF8;
-    width: 45%; /* Larghezza del contenitore */
-    height: 20%;
-    margin-top: 0.5%;
     overflow: hidden; /* Nascondere il contenuto che sfora */
-    padding: 0 5%;
 }
 
 /* Stile per il wrapper delle immagini */
@@ -267,13 +228,10 @@ body {
     display: flex; /* Utilizzare flexbox per allineare le immagini */
     transition: transform 0.5s ease; /* Animazione per lo scorrimento delle immagini */
 }
-
-/* Stile per ciascuna immagine */
 .slide {
     flex: 0 0 50%; /* Impostare la larghezza di ciascuna immagine */
     padding: 0 3%; /* Spazio a sinistra e a destra */
 }
-
 /* Stile per le frecce */
 .arrow {
     position: absolute; /* Posizionare assolutamente rispetto al contenitore */
@@ -297,10 +255,6 @@ body {
 
 #pubblicita_container {
     border-left: 1px solid #ccc;
-    width: 39%; /* Larghezza del contenitore */
-    height: 20%;
-    margin-top: 0.5%;
-    margin-left: 0.5%;
 }
 
 #pubblicita {
@@ -310,34 +264,18 @@ body {
 .slider-container, #pubblicita_container {
     display: inline-block;
     vertical-align: top; /* Allineamento verticale in alto */
+    padding: 0 5%;
 }
 
 #menu_piepagina {
-    height: 20%;
     background-color: #2558BF;
     color: white;
     position: absolute; /* Posizione assoluta rispetto al form */
-    left: 0;
     font-size: 1em;
-    bottom: -3%; /* Altezza del piè di pagina */
-    width: 136%; /* Larghezza dell'intera finestra */
     padding: 0 0; /* Padding per il contenuto */
 }
 
-#contenitore_grid_pie {
-    width: 30%;
-    font-size: 1em;
-    margin-top: 1.6%;
-    margin-left: 2.5%; /* Centra il contenitore orizzontalmente sulla pagina */
-}
 
-#contenitore_grid_pie a {
-    color: white;
-}
-
-#contenitore_grid_pie a:hover {
-    text-decoration: underline;
-}
 
 #gridPie {
     display: grid;
@@ -345,7 +283,7 @@ body {
     grid-template-rows: repeat(4, 1fr);
 }
 
-#foto_menu_pie, #testo_menu_pie, #contenitore_grid_pie {
+#foto_menu_pie, #testo_menu_pie, #contenitore_grid_pie_big_screen {
     display: inline-block;
     vertical-align: top; /* Allineamento verticale in alto */
 }
@@ -358,11 +296,6 @@ body {
     background-color: blue;
     color: white;
     position: absolute; /* Posizione assoluta rispetto al form */
-    left: -9%;
-    font-size: 0.8em;
-    bottom: -3%; /* Altezza del piè di pagina */
-    width: 136%; /* Larghezza dell'intera finestra */
-    padding: 0 0; /* Padding per il contenuto */
 }
 
 #piepagina a {
@@ -388,15 +321,7 @@ a:link, a:visited, a:hover, a:active {
 #p_left {
     color: #639CF8;
 }
-#p_left {
-    margin-left: 15%;
-    float: left;
-}
 
-#p_right {
-    margin-right: 5%;
-    float: right;
-}
 @media (max-width: 480px) {
     #contenitore_pagina {
         max-width: 480px;
@@ -602,6 +527,7 @@ a:link, a:visited, a:hover, a:active {
     .slider-container {
         margin-top: 5px;
         width: 70%; /* Larghezza del contenitore */
+        margin-left: 7%;
         height: 250px;
     }
     .slide {
@@ -633,16 +559,67 @@ a:link, a:visited, a:hover, a:active {
         flex-direction: column; /* Imposta la direzione dei flex items come colonna */
     }
     #p_left{
-        margin-left: 5px;
+        margin-left: 0;
     }
     #p_right{
         margin-right: 5px;
     }
-    #foto_menu_pie, #testo_menu_pie, #contenitore_grid_pie {
+    #contenitore_grid_pie_big_screen{
+        display:none;
+    }
+    .grid_menu_pie{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 2%;
+        margin-top: 13%; /* Altezza dell'intestazione nascosta + margine inferiore */
+        margin-left: 0; /* Allineamento con il margine sinistro di intestazione_nascosta */
+        background-color: rgba(0, 0, 255, 1); /* Opacità per oscurare il resto della pagina */
+        z-index: 999; /* Assicura che la griglia sia sopra il contenuto della pagina */
+        position: fixed;
+    }
+    .grid_item_pie_titolo{
+        font-size: 2em;
+        border-bottom: 2px solid #ccc;
+    }
+    #categorie, #abbonamenti, #pubblicita_pie{
+        display: none;
+    }
+    .grid_item_pie_link a{
+        font-size:1.5em;
+        color:white;
+    }
+    .grid_item_pie_link a:hover{
+        text-decoration: underline;
+    }
+
+    #foto_menu_pie, #testo_menu_pie {
         display: block;
     }
 }
 @media (min-width: 1050px) {
+    #contenitore_pagina{
+        padding-top: 1%;
+        max-width: 80%;
+        padding-bottom: 40%; /* Spazio per il piè di pagina */
+        margin: 0 auto; /* Centra il form nella pagina */
+    }
+    #int_left, #int_right{
+        font-size:1em;
+    }
+    .header {
+        padding: 1.5%;
+    }
+    #intestazione_nascosta {
+        width: 100%;
+        height: 5%;
+    }
+    .header #mid {
+        font-size: 1em;
+    }
+    .header #right {
+        margin-right: 7%;
+    }
     #txt_for_little_screen{
         display:none;
     }
@@ -670,28 +647,117 @@ a:link, a:visited, a:hover, a:active {
         z-index: 999; /* Assicura che la griglia sia sopra il contenuto della pagina */
         position: fixed;
     }
+    .grid-item {
+        padding: 3%;
+    }
+    .grid-titolo {
+        grid-gap:1%;
+        margin-top: 2%;
+    }
+    .grid-item-titolo {
+        padding: 2%;
+    }
+    .grid-item-titolo:nth-child(2) {
+        font-size: 2em;
+    }
+    .grid_sottotitolo {
+        margin-top: 1%;
+        grid-gap: 0.1%;
+    }
+    .grid-item-titolo {
+        padding: 0.5%;
+        font-size: 1em;
+    }
+    .search-box {
+        padding: 1%;
+        border-radius: 0.5%;
+        width: 30%;
+        max-width: 100%;
+    }
+
+    .grid-item-city {
+        padding: 2%;
+    }
+
     #menu_piepagina {
-        left: -23.5%;
+        bottom: -3%; /* Altezza del piè di pagina */
+        height: 20%;
+        margin-top: 2%;
+        left: -14%;
+        width: 126.5%;
     }
     #piepagina {
         left: -23.5%;
     }
     #articolo_1{
+        margin-top: 0.5%;
+        margin-bottom: 0.5%;
         display: flex;
     }
     #container_articoli{
+        margin-top: 0.5%;
+        margin-bottom: 0.5%;
         display: flex; /* Utilizzare flexbox */
     }
-
     #testo_articolo1, #img_articolo1 {
         display: inline-block;
         vertical-align: top; /* Allineamento verticale in alto */
+    }
+
+    .slider-container {
+        width: 44%;
+        height: 20%;
+        margin-top: 0.5%;
+    }
+
+    #pubblicita_container {
+        width: 35%; /* Larghezza del contenitore */
+        height: 20%;
+        margin-top: 0.5%;
+        margin-left: 0.5%;
+    }
+
+    #contenitore_grid_pie_small_screen{
+        display:none;
+    }
+    #contenitore_grid_pie_big_screen {
+        width: 30%;
+        font-size: 1em;
+        margin-top: 1.6%;
+        margin-left: 2.5%; /* Centra il contenitore orizzontalmente sulla pagina */
+    }
+
+    #contenitore_grid_pie_big_screen a {
+        color: white;
+    }
+
+    #contenitore_grid_pie_big_screen a:hover {
+        text-decoration: underline;
+    }
+
+    #piepagina {
+        left: -15%;
+        font-size: 0.8em;
+        bottom: -3%; /* Altezza del piè di pagina */
+        width: 127.5%; /* Larghezza dell'intera finestra */
+        padding: 0 0; /* Padding per il contenuto */
+    }
+    #p_left {
+        margin-left: 10%;
+        float: left;
+    }
+
+    #p_right {
+        margin-right: 5%;
+        float: right;
+    }
+    #p_left, #p_right {
+        display: inline-block;
     }
 }
 @media screen and (min-width: 481px) and (max-width: 1049px) {
     #contenitore_pagina {
         max-width: 100%;
-        padding-top: -4%;
         margin-right: 0.5%;
         margin-left:0.5%;
         padding-bottom: 80%; /* Spazio per il piè di pagina */
@@ -818,6 +884,7 @@ a:link, a:visited, a:hover, a:active {
         font-size:1em;
     }
     .ricerca_citta{
+        background-color: rgba(255, 255, 255, 1);
         grid-column: 1 / span 1; /* L'elemento occupa 4 colonne */
     }
     .search-box{
@@ -825,12 +892,16 @@ a:link, a:visited, a:hover, a:active {
         width: 30%;
     }
     .grid_container_city {
+        z-index: 999;
         overflow-y:scroll;
+        width: 100%;
         grid-template-columns: repeat(1, 1fr);
         display: none;
         border: 2px solid grey;
+        position: relative;
     }
     .grid-item-city {
+        background-color: rgba(255, 255, 255, 1);
         padding:2%;
         border-bottom:1px solid grey;
     }
@@ -842,6 +913,7 @@ a:link, a:visited, a:hover, a:active {
         border-bottom:1px solid grey;
     }
     .grid_container_menu {
+        z-index: 1000;
         grid-template-columns: repeat(1, 1fr);
         display: none;
         border: 2px solid grey;
@@ -891,6 +963,7 @@ a:link, a:visited, a:hover, a:active {
         width: 75%; /* Larghezza del contenitore */
         height: 20%;
         margin-top: 0.5%;
+        margin-left: 7%;
         overflow: hidden; /* Nascondere il contenuto che sfora */
         padding: 0 5%;
     }
@@ -906,23 +979,50 @@ a:link, a:visited, a:hover, a:active {
         width: 100%; /* Larghezza dell'intera finestra */
     }
     #piepagina {
+        height: 2%;
         background-color: blue;
         color: white;
         position: absolute; /* Posizione assoluta rispetto al form */
         left: 0;
-        font-size: 0.5em;
-        bottom: -5%; /* Altezza del piè di pagina */
-        width: 100%; /* Larghezza dell'intera finestra */
+        font-size: 0.7em;
         display: flex;
         flex-direction: column; /* Imposta la direzione dei flex items come colonna */
+        bottom: -5%; /* Altezza del piè di pagina */
+        width: 100%; /* Larghezza dell'intera finestra */
     }
-    #p_left{
-        margin-left: 0.5%;
+    #contenitore_grid_pie_big_screen{
+        display:none;
     }
-    #p_right{
-        margin-right: 0.5%;
+    #p_right, #p_left {
+        margin-bottom: 0;
     }
-    #foto_menu_pie, #testo_menu_pie, #contenitore_grid_pie {
+    .grid_menu_pie{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 2%;
+        margin-top: 13%; /* Altezza dell'intestazione nascosta + margine inferiore */
+        margin-left: 0; /* Allineamento con il margine sinistro di intestazione_nascosta */
+        background-color: rgba(0, 0, 255, 1); /* Opacità per oscurare il resto della pagina */
+        z-index: 999; /* Assicura che la griglia sia sopra il contenuto della pagina */
+        position: fixed;
+    }
+    .grid_item_pie_titolo{
+        font-size: 2em;
+        border-bottom: 2px solid #ccc;
+    }
+    #categorie, #abbonamenti, #pubblicita_pie{
+        display: none;
+    }
+    .grid_item_pie_link a{
+        font-size:1.5em;
+        color:white;
+    }
+    .grid_item_pie_link a:hover{
+        text-decoration: underline;
+    }
+
+    #foto_menu_pie, #testo_menu_pie {
         display: block;
     }
 }

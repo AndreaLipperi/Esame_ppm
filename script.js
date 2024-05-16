@@ -1,13 +1,19 @@
 function showHideGrid(id) {
     var gridContainer = document.getElementById(id);
     var tipoDisplay = window.getComputedStyle(gridContainer).getPropertyValue('display');
-    if(tipoDisplay == "none"){
+    if(tipoDisplay === "none"){
         gridContainer.style.display = "grid";
     } else {
         gridContainer.style.display = "none";
     }
 }
+function rotateArrow(id, rotation) {
+    var id_arrow = id + '_arrow';
+    var arrow = document.getElementById(id_arrow);
+    arrow.style.transform = 'rotate('+rotation+'deg)';
+    arrow.style.transition = 'transform 0.4s ease';
 
+}
 function CloseGrid(id){
     var gridContainer = document.getElementById(id);
     gridContainer.style.display = "none";
@@ -58,14 +64,8 @@ function openCloseSubsection(id) {
     var form = document.getElementById("contenitore_pagina"); // Aggiungiamo il footer
 
     const screenWidth = window.innerWidth;
-    var id_arrow_up = id + '_up';
-    var id_arrown_down = id + '_down';
-    var arrowUp = document.getElementById(id_arrow_up);
-    var arrowDown = document.getElementById(id_arrown_down);
 
     if (tipoDisplay == "none") {
-        arrowUp.style.display="block";
-        arrowDown.style.display="none";
         subsection.style.display = "grid";
         var altezzaGrid = subsection.offsetHeight; // Altezza della grid
 
@@ -82,6 +82,7 @@ function openCloseSubsection(id) {
         menu.style.marginTop = nuovoMargin + "px";
         menu.style.height = nuovoHeight + "px";
         form.style.paddingBottom = nuovoPadding + "px";
+        rotateArrow(id, 180);
 
 
     } else {
@@ -102,9 +103,7 @@ function openCloseSubsection(id) {
         form.style.paddingBottom = nuovoPadding + "px";
 
         subsection.style.display = "none";
-
-        arrowUp.style.display="none";
-        arrowDown.style.display="block";
+        rotateArrow(id, 360);
     }
 }
 function cambiaStilePie() {

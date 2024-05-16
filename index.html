@@ -65,8 +65,14 @@
 			var form = document.getElementById("contenitore_pagina"); // Aggiungiamo il footer
 
 			const screenWidth = window.innerWidth;
+			var id_arrow_up = id + '_up';
+			var id_arrown_down = id + '_down';
+			var arrowUp = document.getElementById(id_arrow_up);
+			var arrowDown = document.getElementById(id_arrown_down);
 
 			if (tipoDisplay == "none") {
+				arrowUp.style.display="block";
+				arrowDown.style.display="none";
 				subsection.style.display = "grid";
 				var altezzaGrid = subsection.offsetHeight; // Altezza della grid
 
@@ -103,6 +109,9 @@
 				form.style.paddingBottom = nuovoPadding + "px";
 
 				subsection.style.display = "none";
+
+				arrowUp.style.display="none";
+				arrowDown.style.display="block";
 			}
 		}
 
@@ -320,19 +329,19 @@
 		</div>
 		<div id="contenitore_grid_pie_small_screen">
 			<div class="grid_menu_pie_small" id="gridPieSmall">
-				<div class="grid_item_pie_titolo" onclick="openCloseSubsection('categorie')"><span style="color:#639CF8;">CATEGORIE</span><span style="float:right; font-size:0.7em; color:#639CF8;">&#5167;</span></div>
+				<div class="grid_item_pie_titolo" onclick="openCloseSubsection('categorie')"><span style="color:#639CF8;">CATEGORIE</span><span id="categorie_down" style="float:right; font-size:0.7em; color:#639CF8;margin-right: 3%; ">&#9660;</span><span id="categorie_up" style="float:right; font-size:0.7em; color:#639CF8;margin-right: 3%; display: none; ">&#9650;</span></div>
 				<div id="categorie">
 					<div class="grid_item_pie_link"><a href=""><b>Contatti</b></a></div>
 					<div class="grid_item_pie_link"><a href=""><b>Lavora con noi</b></a></div>
 					<div class="grid_item_pie_link"><a href=""><b>Concorsi</b></a></div>
 				</div>
-				<div class="grid_item_pie_titolo" onclick="openCloseSubsection('abbonamenti')"><span style="color:#639CF8;">ABBONAMENTI</span><span style="float:right; font-size:0.7em; color:#639CF8;">&#5167;</span></div>
+				<div class="grid_item_pie_titolo" onclick="openCloseSubsection('abbonamenti')"><span style="color:#639CF8;">ABBONAMENTI</span><span id="abbonamenti_down" style="float:right; font-size:0.7em; color:#639CF8;margin-right: 3%;">&#9660;</span><span id="abbonamenti_up" style="float:right; font-size:0.7em; color:#639CF8;margin-right: 3%; display: none; ">&#9650;</span></div>
 				<div id="abbonamenti">
 					<div class="grid_item_pie_link"><a href=""><b>Digitale</b></a></div>
 					<div class="grid_item_pie_link"><a href=""><b>Cartaceo</b></a></div>
 					<div class="grid_item_pie_link"><a href=""><b>Offerte Promozionali</b></a></div>
 				</div>
-				<div class="grid_item_pie_titolo" onclick="openCloseSubsection('pubblicita_pie')"><span style="color:#639CF8;">PUBBLICITÀ</span><span style="float:right; font-size:0.7em; color:#639CF8;">&#5167;</span></div>
+				<div class="grid_item_pie_titolo" onclick="openCloseSubsection('pubblicita_pie')"><span style="color:#639CF8;">PUBBLICITÀ</span><span id="pubblicita_pie_down" style="float:right; font-size:0.7em; color:#639CF8;margin-right: 3%;">&#9660;</span><span id="pubblicita_pie_up" style="float:right; font-size:0.7em; color:#639CF8;margin-right: 3%; display: none; ">&#9650;</span></div>
 				<div id="pubblicita_pie">
 					<div class="grid_item_pie_link"><a href=""><b>Speed Adv</b></a></div>
 					<div class="grid_item_pie_link"><a href=""><b>Network</b></a></div>

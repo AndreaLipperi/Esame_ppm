@@ -6,11 +6,13 @@
 body {
     margin: 0;
     font-family: 'Kameron Regular', serif;
+
 }
 
 #contenitore_pagina {
+    scrollbar-width: none;
+    overflow-y: hidden;
     background-color: white;
-    height: 100%;
     position: relative; /* Posizione relativa per allineare il piè di pagina */
 }
 

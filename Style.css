@@ -10,6 +10,7 @@ body {
 
 #contenitore_pagina {
     background-color: white;
+    height: 100%;
     position: relative; /* Posizione relativa per allineare il piè di pagina */
 }
 

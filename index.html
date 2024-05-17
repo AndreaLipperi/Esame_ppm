@@ -27,7 +27,7 @@
 	<div class="grid-item"><a href="">Economia ></a></div>
 	<div class="grid-item"><a href="">Politica ></a></div>
 </div>
-<form id="contenitore_pagina" onclick="CloseGrid('gridContainer');CloseGrid('gridContainerMenu');CloseGrid('gridContainerCity')">
+<form id="contenitore_pagina">
 	<div id="int_left">
 		<b>QUOTIDIANO</b>
 	</div>
@@ -61,8 +61,8 @@
             		<a href="" style="color:blue;margin-right:15px;">Fiorentina</a>
         			</span></b>
 		</div>
-		<div class="grid_item_sottotitolo" onmouseenter="showHideGrid('gridContainerCity');CloseGrid('gridContainerMenu')" onclick="showHideGrid('gridContainerCity');CloseGrid('gridContainerMenu')"> CITTÀ <span id="gridContainerCity_arrow" style="font-size: 0.8em;">&#9660;</span></div>
-		<div class="grid_item_sottotitolo" onmouseenter="showHideGrid('gridContainerMenu');CloseGrid('gridContainerCity')" onclick="showHideGrid('gridContainerMenu');CloseGrid('gridContainerCity')">MENÙ <span id="gridContainerMenu_arrow" style="font-size: 0.8em;">&#9660;</span></div>
+		<div class="grid_item_sottotitolo" onmouseenter="ControllerDoubleGrid('gridContainerCity', 'gridContainerMenu')" onclick="ControllerDoubleGrid('gridContainerCity', 'gridContainerMenu')"> CITTÀ <span id="gridContainerCity_arrow" style="float:right;font-size:0.8em; margin-right: 30%;">&#9660;</span></div>
+		<div class="grid_item_sottotitolo" onmouseenter="ControllerDoubleGrid('gridContainerMenu', 'gridContainerCity')" onclick="ControllerDoubleGrid('gridContainerMenu', 'gridContainerCity')">MENÙ <span id="gridContainerMenu_arrow" style="float:right;font-size:0.8em; margin-right: 30%;">&#9660;</span></div>
 		<div class="grid_item_sottotitolo"><a href="">VIDEO</a></div>
 		<div class="grid_item_sottotitolo"><a href="">ULTIM'ORA </a> <span style="color:red;font-size:20px;">&#x2022 </span></div>
 		<div class="grid_item_sottotitolo"><a href="">&#x1F50D; Ricerca</a></div>

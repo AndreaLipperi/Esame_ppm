@@ -1,10 +1,23 @@
 function showHideGrid(id) {
     var gridContainer = document.getElementById(id);
-    var tipoDisplay = window.getComputedStyle(gridContainer).getPropertyValue('display');
+    var tipoDisplay = window.getComputedStyle(gridContainer, null).getPropertyValue('display');
     if(tipoDisplay === "none"){
         gridContainer.style.display = "grid";
+    } else{
+        CloseGrid(id);
+    }
+}
+function ControllerDoubleGrid(id_to_open, id_to_close) {
+    var grid_to_open = document.getElementById(id_to_open);
+    CloseGrid(id_to_close);
+    rotateArrow(id_to_close, 0);
+    var tipoDisplay_open = window.getComputedStyle(grid_to_open, null).getPropertyValue('display');
+    if(tipoDisplay_open === "none"){
+        grid_to_open.style.display = "grid";
+        rotateArrow(id_to_open, 180);
     } else {
-        gridContainer.style.display = "none";
+        CloseGrid(id_to_open);
+        rotateArrow(id_to_open, 360);
     }
 }
 function rotateArrow(id, rotation) {
@@ -168,6 +181,7 @@ function HideGrid(id) {
     setTimeout(function() {
         if (!isHovered) {
             gridContainer.style.display = "none";
+            rotateArrow(id, 360);
         }
     }, 500);
 }

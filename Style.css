@@ -470,7 +470,6 @@ a:link, a:visited, a:hover, a:active {
     }
     .grid_container_city {
         grid-template-columns: repeat(1, 1fr);
-        display: none;
         border: 2px solid grey;
     }
     .grid-item-city {
@@ -908,7 +907,6 @@ a:link, a:visited, a:hover, a:active {
         z-index: 999;
         width: 100%;
         grid-template-columns: repeat(1, 1fr);
-        display: none;
         border: 2px solid grey;
         position: relative;
     }

@@ -11,7 +11,6 @@ body {
 
 #contenitore_pagina {
     scrollbar-width: none;
-    overflow-y: hidden;
     background-color: white;
     position: relative; /* Posizione relativa per allineare il piè di pagina */
 }
@@ -339,6 +338,7 @@ a:link, a:visited, a:hover, a:active {
         margin-left:5px;
         padding-bottom: 520px; /* Spazio per il piè di pagina */
         position: relative;
+        overflow-y: hidden;
         overflow-x: hidden;
     }
     #int_left {
@@ -560,7 +560,7 @@ a:link, a:visited, a:hover, a:active {
         position: absolute; /* Posizione assoluta rispetto al form */
         left: 0;
         font-size: 12px;
-        bottom: -20px; /* Altezza del piè di pagina */
+        bottom: 0; /* Altezza del piè di pagina */
         width: 100vw; /* Larghezza dell'intera finestra */
         display: flex;
         flex-direction: column; /* Imposta la direzione dei flex items come colonna */
@@ -981,7 +981,7 @@ a:link, a:visited, a:hover, a:active {
         padding: 0 5%;
     }
     #menu_piepagina {
-        margin-top: 1%;
+        margin-top: 10%;
         height: 20%;
         background-color: #2558BF;
         color: white;

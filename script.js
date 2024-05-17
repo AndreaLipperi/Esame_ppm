@@ -30,6 +30,7 @@ function rotateArrow(id, rotation) {
 function CloseGrid(id){
     var gridContainer = document.getElementById(id);
     gridContainer.style.display = "none";
+    rotateArrow(id, 360);
 }
 function Ricerca() {
     var input = document.querySelector('.search-box').value.toLowerCase(); // Otteniamo il valore digitato nell'input e lo convertiamo in minuscolo

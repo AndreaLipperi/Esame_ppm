@@ -21,6 +21,7 @@
 </div>
 <div class="grid-container" id="gridContainer" onmouseleave="HideGrid('gridContainer')">
 	<!-- Celle della griglia -->
+	<div class="grid-item" style="border-bottom: 0;"><span onclick="CloseGrid('gridContainer')" style="float: right;cursor: pointer;">X</span></div>
 	<div class="grid-item"><a href="#">Cronaca ></a></div>
 	<div class="grid-item"><a href="#">Sport ></a></div>
 	<div class="grid-item"><a href="#">Cosa Fare ></a></div>
@@ -69,6 +70,7 @@
 	</div>
 	<div class="grid_container_city" id="gridContainerCity">
 		<!-- Celle della griglia -->
+		<div class="grid-item-city" style="border-bottom: 0;"><span onclick="CloseGrid('gridContainerCity')" style="float: right;cursor: pointer;">X</span></div>
 		<div class="ricerca_citta" id="ricercaCitta">&#x1F50D; <input type="text" class="search-box" name="q" placeholder="Ricerca..." oninput="Ricerca()"></div>
 		<div class="grid-item-city" data-city="roma"><a href="#">Roma ></a></div>
 		<div class="grid-item-city" data-city="milano"><a href="#">Milano ></a></div>
@@ -99,6 +101,7 @@
 
 	<div class="grid_container_menu" id="gridContainerMenu" onmouseleave="HideGrid('gridContainerMenu')">
 		<!-- Celle della griglia -->
+		<div class="grid-item" style="border-bottom: 0;"><span onclick="CloseGrid('gridContainerMenu')" style="float: right;cursor: pointer;">X</span></div>
 		<div class="grid-item"><a href="#">Cronaca ></a></div>
 		<div class="grid-item"><a href="#">Sport ></a></div>
 		<div class="grid-item"><a href="#">Cosa Fare ></a></div>

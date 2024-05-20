@@ -14,7 +14,6 @@ body {
     background-color: white;
     position: relative; /* Posizione relativa per allineare il piè di pagina */
 }
-
 #int_left {
     color: grey;
     position: relative;
@@ -608,7 +607,9 @@ a:link, a:visited, a:hover, a:active {
     body {
         background-color: white;
     }
-
+    .grid-item:nth-child(1), .grid-item-city:nth-child(1) {
+        display: none;
+    }
     #contenitore_pagina{
         padding-top: 1%;
         max-width: 80%;

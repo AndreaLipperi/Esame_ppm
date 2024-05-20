@@ -356,10 +356,9 @@ a:link, a:visited, a:hover, a:active {
         margin: -1%;
     }
     #login_for_little_screen{
-        width: 20px; /* Imposta la larghezza */
-        height: 20px; /* Imposta l'altezza */
+        width: 15px; /* Imposta la larghezza */
+        height: 15px; /* Imposta l'altezza */
         margin-top: -20px;
-        font-size: 15px; /* Imposta la dimensione del font */
         text-align: center;
         float: right;
         margin-right: 0;
@@ -803,8 +802,10 @@ a:link, a:visited, a:hover, a:active {
         margin: -1%;
     }
     #login_for_little_screen{
+        width: 15px; /* Imposta la larghezza */
+        height: 15px; /* Imposta l'altezza */
         margin-top: -2%;
-        font-size: 1em; /* Imposta la dimensione del font */
+        color: white;
         text-align: center;
         float: right;
         margin-right: 0;

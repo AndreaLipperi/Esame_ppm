@@ -151,6 +151,7 @@ document.addEventListener("DOMContentLoaded", function() {
             nascostoDiv.style.top = "0"; // Scende dall'alto
         } else {
             nascostoDiv.style.top = "-100px"; // Nasconde sopra la pagina (puoi regolare l'altezza in base alle tue esigenze)
+            CloseGrid("gridContainer");
         }
     }
 });

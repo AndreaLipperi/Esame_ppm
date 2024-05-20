@@ -141,18 +141,18 @@ function cambiaStilePie() {
 }
 window.onload = cambiaStilePie;
 window.onresize = cambiaStilePie;
+
 document.addEventListener("DOMContentLoaded", function() {
     window.onscroll = function() { mostraDiv() };
     var nascostoDiv = document.getElementById("intestazione_nascosta");
 
     function mostraDiv() {
         if (window.scrollY > 15) {
-            nascostoDiv.style.display = "flex";
+            nascostoDiv.style.top = "0"; // Scende dall'alto
         } else {
-            nascostoDiv.style.display = "none";
+            nascostoDiv.style.top = "-100px"; // Nasconde sopra la pagina (puoi regolare l'altezza in base alle tue esigenze)
         }
     }
-
 });
 var searchInput = document.querySelector('.search-box');
 

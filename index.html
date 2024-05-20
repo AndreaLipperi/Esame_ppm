@@ -2,13 +2,14 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#015ac7">
 	<title>Giornale - tutte le notizie in tempo reale dalla regione che vorrai tu</title>
 	<link rel="stylesheet" type="text/css" href="Style.css">
 	<script src="script.js"></script>
 </head>
 <body>
 
-<div class="header hidden" id="intestazione_nascosta"> <!-- Aggiunta la classe "hidden" per nascondere l'intestazione all'apertura della pagina -->
+<div class="header" id="intestazione_nascosta">
 	<div id="left">
 		<b><p class="button-like" onmouseenter="showHideGrid('gridContainer')" onclick="showHideGrid('gridContainer')">MENU &#x2630; </p></b><a href="#" id="research_but_header">| &#x1F50D; </a>
 	</div>
@@ -65,7 +66,7 @@
 		<div class="grid_item_sottotitolo" onmouseenter="ControllerDoubleGrid('gridContainerCity', 'gridContainerMenu')" onclick="ControllerDoubleGrid('gridContainerCity', 'gridContainerMenu')"> CITTÀ <span id="gridContainerCity_arrow" style="float:right;font-size:0.8em; margin-right: 30%;">&#9660;</span></div>
 		<div class="grid_item_sottotitolo" onmouseenter="ControllerDoubleGrid('gridContainerMenu', 'gridContainerCity')" onclick="ControllerDoubleGrid('gridContainerMenu', 'gridContainerCity')">MENÙ <span id="gridContainerMenu_arrow" style="float:right;font-size:0.8em; margin-right: 30%;">&#9660;</span></div>
 		<div class="grid_item_sottotitolo"><a href="#">VIDEO</a></div>
-		<div class="grid_item_sottotitolo"><a href="#">ULTIM'ORA </a> <span style="color:red;font-size:20px;">&#x2022 </span></div>
+		<div class="grid_item_sottotitolo"><a href="#">ULTIM'ORA</a> <span class="dot" id="dot_sottotitolo"></span></div>
 		<div class="grid_item_sottotitolo"><a href="#">&#x1F50D; Ricerca</a></div>
 	</div>
 	<div class="grid_container_city" id="gridContainerCity">
@@ -110,7 +111,7 @@
 	</div>
 
 	<div id="ultimora">
-		<p id="ultimora_left"><span id="ultimora_dot"></span><a href="#"> <b>ULTIM'ORA | notizia</b></a> </p>
+		<p id="ultimora_left"><span class="dot" id="ultimora_dot"></span><a href="#"> <b>ULTIM'ORA | notizia</b></a> </p>
 		<p id="ultimora_right"><a href="#"> <b>LEGGI TUTTI</b></a></p>
 		<div id="ultimora_clear"></div>
 	</div>

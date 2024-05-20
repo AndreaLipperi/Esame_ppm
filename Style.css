@@ -36,7 +36,8 @@ body {
 #intestazione_nascosta {
     background-color: rgba(255, 255, 255, 1); /* Opacità per oscurare il resto della pagina */
     position: fixed;
-    top: 0;
+    transition: top 0.5s ease;
+    top: -100px;
     z-index: 1000;
 }
 
@@ -49,7 +50,7 @@ body {
 }
 
 .hidden {
-    display: none;
+    display: flex;
 }
 
 .button-like {
@@ -175,7 +176,7 @@ body {
     clear: both;
 }
 
-#ultimora_dot {
+.dot {
     display: inline-block;
     width: 1em; /* Dimensione della prima lettera */
     height: 1em; /* Stessa dimensione della larghezza */
@@ -183,6 +184,7 @@ body {
     border-radius: 50%; /* Per rendere il pallino rotondo */
     margin-right: 0.5em; /* Spazio tra la parola e il pallino */
 }
+
 
 #articolo_1 {
     border-bottom: 1px solid #ccc;
@@ -333,8 +335,6 @@ a:link, a:visited, a:hover, a:active {
     #contenitore_pagina {
         max-width: 480px;
         margin-top: -20px;
-        margin-right: 5px;
-        margin-left:5px;
         padding-bottom: 520px; /* Spazio per il piè di pagina */
         position: relative;
         overflow-y: hidden;
@@ -350,15 +350,12 @@ a:link, a:visited, a:hover, a:active {
         display: none;
     }
     #txt_for_little_screen {
-        font-size: 20px;
         color: #639CF8;
     }
     #txt_for_little_screen, #titolo_giornale{
-        margin: 0;
+        margin: -1%;
     }
     #login_for_little_screen{
-        border: 1px solid white; /* Imposta il bordo bianco */
-        background-color: white;
         width: 20px; /* Imposta la larghezza */
         height: 20px; /* Imposta l'altezza */
         margin-top: -20px;
@@ -373,30 +370,33 @@ a:link, a:visited, a:hover, a:active {
         background-color: #639CF8;
         border: 2px solid #639CF8;
         float: right;
-        margin-top:10px;
+        margin-top:0;
         margin-right: 0;
+        border-radius: 10px;
     }
     #titolo_giornale, #abbonati_for_little_screen{
         display: inline-block;
     }
+
     .grid-titolo {
+        height: 45px;
         background-color: #015ac7;
     }
     .grid-item-titolo {
-        padding: 10px;
+        padding: 0;
         text-align: left;
     }
     #titolo_txt a {
         color: white;
     }
     .grid-item-titolo:nth-child(2) {
+        margin-top: 0;
         color: white;
-        font-size: 20px;
+        font-size: 10px;
     }
     #intestazione_nascosta {
         background-color:#015ac7; /* Opacità per oscurare il resto della pagina */
         position: fixed;
-        top: 0;
         width: 100%;
         height: 50px; /* Altezza fissa per oscurare il resto della pagina */
         z-index: 1000;
@@ -405,6 +405,7 @@ a:link, a:visited, a:hover, a:active {
         display:none;
     }
     .header {
+        border-bottom: 0;
         padding:15px;
     }
     .header #mid {
@@ -460,8 +461,11 @@ a:link, a:visited, a:hover, a:active {
         display:none;
     }
     .grid_item_sottotitolo{
-        padding:5px;
-        font-size:15px;
+        font-size:11px;
+    }
+    #dot_sottotitolo {
+        width: 0.5em; /* Dimensione della prima lettera */
+        height: 0.5em; /* Stessa dimensione della larghezza */
     }
     .ricerca_citta{
         grid-column: 1 / span 1; /* L'elemento occupa 4 colonne */
@@ -679,6 +683,10 @@ a:link, a:visited, a:hover, a:active {
         margin-top: 1%;
         grid-gap: 0.1%;
     }
+    #dot_sottotitolo {
+        width: 0.7em; /* Dimensione della prima lettera */
+        height: 0.7em; /* Stessa dimensione della larghezza */
+    }
     .grid-item-titolo {
         padding: 0.5%;
         font-size: 1em;
@@ -773,9 +781,7 @@ a:link, a:visited, a:hover, a:active {
 @media screen and (min-width: 481px) and (max-width: 1049px) {
     #contenitore_pagina {
         max-width: 100%;
-        margin-right: 0.5%;
-        margin-left:0.5%;
-        margin-top: -1.8%;
+        margin-top: -2%;
         padding-bottom: 80%; /* Spazio per il piè di pagina */
         position: relative;
         overflow-x: hidden;
@@ -794,7 +800,7 @@ a:link, a:visited, a:hover, a:active {
         color: #639CF8;
     }
     #txt_for_little_screen, #titolo_giornale{
-        margin: 0;
+        margin: -1%;
     }
     #login_for_little_screen{
         margin-top: -2%;
@@ -811,11 +817,13 @@ a:link, a:visited, a:hover, a:active {
         float: right;
         margin-top:1%;
         margin-right: 0;
+        border-radius: 10px;
     }
     #titolo_giornale, #abbonati_for_little_screen{
         display: inline-block;
     }
     .grid-titolo {
+        height: 2%;
         background-color: #015ac7;
     }
     .grid-item-titolo {
@@ -827,12 +835,11 @@ a:link, a:visited, a:hover, a:active {
     }
     .grid-item-titolo:nth-child(2) {
         color: white;
-        font-size: 1.5em;
+        font-size: 1em;
     }
     #intestazione_nascosta {
         background-color: #015ac7; /* Opacità per oscurare il resto della pagina */
         position: fixed;
-        top: 0;
         width: 100%;
         height:8%; /* Altezza fissa per oscurare il resto della pagina */
         z-index: 1000;
@@ -841,6 +848,7 @@ a:link, a:visited, a:hover, a:active {
         display:none;
     }
     .header {
+        border-bottom: 0;
         padding:1.5%;
     }
     .header #mid {
@@ -896,8 +904,12 @@ a:link, a:visited, a:hover, a:active {
         display:none;
     }
     .grid_item_sottotitolo{
-        padding:0.5%;
-        font-size:1em;
+        padding-top:2%;
+        font-size:0.9em;
+    }
+    #dot_sottotitolo {
+        width: 0.5em; /* Dimensione della prima lettera */
+        height: 0.5em; /* Stessa dimensione della larghezza */
     }
     .ricerca_citta{
         background-color: rgba(255, 255, 255, 1);

@@ -425,7 +425,7 @@ a:link, a:visited, a:hover, a:active {
     .button-like {
         font-size: 20px;
         position: absolute;
-        top: 20px;
+        top: 0;
         right: 30px;
         color: white; /* Colore del testo */
         display: inline;
@@ -433,7 +433,7 @@ a:link, a:visited, a:hover, a:active {
     #notif_little_screen{
         font-size: 25px;
         position: absolute;
-        top: 38px;
+        top: 18px;
         right: 45px;
         color: white;
     }
@@ -885,7 +885,7 @@ a:link, a:visited, a:hover, a:active {
     .button-like {
         font-size: 2em;
         position: absolute;
-        top: -3%;
+        top: -20%;
         right: 3%;
         color: white; /* Colore del testo */
         display: inline; /* Mostra come elemento "inline" */
@@ -894,7 +894,7 @@ a:link, a:visited, a:hover, a:active {
     #notif_little_screen{
         font-size: 2em;
         position: absolute;
-        top: 38%;
+        top: 20%;
         right: 8%;
         color: white;
     }
